@@ -29,7 +29,7 @@ public class logReg extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(logReg.this, MainActivity.class);
+                Intent intent = new Intent(logReg.this, registrationPage.class);
                 startActivity(intent);
             }
         });
