@@ -14,7 +14,7 @@ import com.example.fooddeliveryapp.entities.CustomerDB;
 
 public class registrationPage extends AppCompatActivity {
 
-    private EditText nameEdt, ageEdt, emailEdt, passwordEdt;
+    private EditText nameEdt, ageEdt, emailEdt, passwordEdt, passwordEdt2;
     private Button register;
     private CustomerDB dbHandler;
 
@@ -28,6 +28,7 @@ public class registrationPage extends AppCompatActivity {
         ageEdt = findViewById(R.id.age);
         emailEdt = findViewById(R.id.username);
         passwordEdt = findViewById(R.id.password);
+        passwordEdt2 = findViewById(R.id.confirm_password);
         register = findViewById(R.id.register);
 
         // create database class and pass context to it.
@@ -40,10 +41,16 @@ public class registrationPage extends AppCompatActivity {
                 String age = ageEdt.getText().toString();
                 String email = emailEdt.getText().toString();
                 String password = passwordEdt.getText().toString();
+                String password2 = passwordEdt2.getText().toString();
 
                 // validating if the text fields are empty or not.
-                if (username.isEmpty() && age.isEmpty() && email.isEmpty() && password.isEmpty()) {
+                if (username.isEmpty() || age.isEmpty() || email.isEmpty() || password.isEmpty() || password2.isEmpty()) {
                     Toast.makeText(registrationPage.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!password.equals(password2)) {
+                    Toast.makeText(registrationPage.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
