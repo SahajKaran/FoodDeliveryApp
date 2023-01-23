@@ -32,7 +32,7 @@
         android:layout_marginRight="75dp"
         android:autofillHints="@string/enter_email"
         android:backgroundTint="@color/colorPrimary"
-        android:hint="@string/register_email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:selectAllOnFocus="true"

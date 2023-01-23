@@ -18,6 +18,8 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
     private ArrayList<Customer> customerArrayList;
     private Context context;
 
+    public CustomerAdapter() { }
+
     public CustomerAdapter(ArrayList<Customer> customerArrayList, Context context) {
         this.customerArrayList = customerArrayList;
         this.context = context;

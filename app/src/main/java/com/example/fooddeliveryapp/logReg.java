@@ -9,18 +9,35 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.fooddeliveryapp.entities.Customer;
+import com.example.fooddeliveryapp.entities.CustomerAdapter;
+import com.example.fooddeliveryapp.entities.CustomerDB;
+
+import java.util.ArrayList;
 
 public class logReg extends AppCompatActivity {
+    // Variables
+    private EditText emailEdt, passwordEdt;
+    private ArrayList<Customer> custArrayList;
+    private CustomerDB dbHandler;
+    private int customerListSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_reg);
 
+        // Text Fields
+        emailEdt = findViewById(R.id.username);
+        passwordEdt = findViewById(R.id.password);
+
         // Buttons
-        Button login = (Button) findViewById(R.id.login);
-        Button register = (Button) findViewById(R.id.register);
-        Button accounts = (Button) findViewById(R.id.accounts);
+        Button login = findViewById(R.id.login);
+        Button register = findViewById(R.id.register);
+        Button accounts = findViewById(R.id.accounts);
 
         // Request permissions to store data.
         String[] permissionsStorage = {Manifest.permission.READ_EXTERNAL_STORAGE};
@@ -30,11 +47,44 @@ public class logReg extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, permissionsStorage, requestExternalStorage);
         }
 
+        //Get customer data if customer registered let them login.
+        custArrayList = new ArrayList<>();
+        dbHandler = new CustomerDB(logReg.this);
+        custArrayList = dbHandler.readCustomers();
+        customerListSize = custArrayList.size();
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(logReg.this, MainActivity.class);
-                startActivity(intent);
+                boolean validUser = false;
+                String userEmail = emailEdt.getText().toString();
+                String passWord = passwordEdt.getText().toString();
+                String dbUser;
+                String dbUserPass;
+
+                if (userEmail.isEmpty() || passWord.isEmpty()) {
+                    Toast.makeText(logReg.this, "Please fill email and password fields.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                //Search Database for customer
+                //ToDO: Optimize for loop Binary search maybe ?
+
+                for (int i = 0; i<customerListSize; i++) {
+
+                    dbUser = custArrayList.get(i).getId();
+                    dbUserPass = custArrayList.get(i).getPassword();
+                    if (userEmail.equals(dbUser) && passWord.equals(dbUserPass)) {
+                        validUser = true; //customer was found on the database.
+                    }
+                }
+
+                if (validUser) { // Customer is valid user let them through to main page.
+                    Intent intent = new Intent(logReg.this, MainActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(logReg.this, "Ivalid User. Please Register.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
