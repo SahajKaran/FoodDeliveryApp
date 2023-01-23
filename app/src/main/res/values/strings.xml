@@ -19,4 +19,6 @@
     <string name="finish_registration">Finish Registration</string>
     <string name="customer_password"><![CDATA[Customer Password ->]]></string>
     <string name="customer_age">Customer Age</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
 </resources>
