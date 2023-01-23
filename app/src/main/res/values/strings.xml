@@ -9,4 +9,9 @@
     <string name="assign_password_to_account">Assign Password to Account</string>
     <string name="register_email">Register Email</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="existing_accounts">Existing Accounts</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_email">customer Email</string>
+    <string name="age">Age</string>
+    <string name="password">Password</string>
 </resources>
