@@ -33,7 +33,7 @@ public class splashScreen extends AppCompatActivity {
         logo = findViewById(R.id.logo);
         header = findViewById(R.id.header);
         slogan = findViewById(R.id.footer);
-
+        //Animations
         logo.setAnimation(topAnim);
         header.setAnimation(topAnim);
         slogan.setAnimation(botAnim);
