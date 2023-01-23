@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 @SuppressLint("CustomSplashScreen")
 public class splashScreen extends AppCompatActivity {
 
-    private static final int SPLASH_SCREEN = 5000;
+    private static final int SPLASH_SCREEN = 2500;
     //Variables
     Animation topAnim, botAnim;
     ImageView logo;
@@ -39,7 +39,7 @@ public class splashScreen extends AppCompatActivity {
         slogan.setAnimation(botAnim);
 
         new Handler().postDelayed(() -> {
-            Intent i = new Intent(splashScreen.this, MainActivity.class);
+            Intent i = new Intent(splashScreen.this, logReg.class);
             startActivity(i);
             finish();
         }, SPLASH_SCREEN);
