@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -28,8 +29,8 @@
         android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dp"
-        android:layout_marginRight="75dp"
+        android:layout_marginLeft="100sp"
+        android:layout_marginRight="100sp"
         android:autofillHints="@string/enter_email"
         android:backgroundTint="@color/colorPrimaryDark"
         android:hint="@string/email"
@@ -42,25 +43,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header" />
 
+
     <EditText
         android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dp"
+        android:layout_marginLeft="100sp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="75dp"
-        android:autofillHints="@string/enter_password"
+        android:layout_marginRight="100sp"
         android:backgroundTint="@color/colorPrimaryDark"
         android:hint="@string/enter_password"
-        android:imeOptions="actionDone"
         android:inputType="textPassword"
-        android:minHeight="48dp"
         android:selectAllOnFocus="true"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="55dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:id="@+id/imageView_shows_hide_pwd"
+        app:layout_constraintStart_toEndOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/password"
+        app:layout_constraintBottom_toBottomOf="@+id/password"
+        ></ImageView>
 
     <Button
         android:id="@+id/login"
