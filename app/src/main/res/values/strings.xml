@@ -11,8 +11,15 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="existing_accounts">Existing Accounts</string>
     <string name="customer_name">Customer Name</string>
-    <string name="customer_email">customer Email</string>
+    <string name="customer_email">Customer Email</string>
     <string name="age">Age</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="finish_registration">Finish Registration</string>
+    <string name="customer_password"><![CDATA[Customer Password ->]]></string>
+    <string name="customer_age">Customer Age</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="create_account">Create Account</string>
 </resources>

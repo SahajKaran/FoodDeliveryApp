@@ -7,9 +7,12 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.fooddeliveryapp.entities.Customer;
@@ -38,6 +41,9 @@ public class logReg extends AppCompatActivity {
         Button login = findViewById(R.id.login);
         Button register = findViewById(R.id.register);
         Button accounts = findViewById(R.id.accounts);
+
+        showHidePass();
+
 
         // Request permissions to store data.
         String[] permissionsStorage = {Manifest.permission.READ_EXTERNAL_STORAGE};
@@ -69,7 +75,6 @@ public class logReg extends AppCompatActivity {
 
                 //Search Database for customer
                 //ToDO: Optimize for loop Binary search maybe ?
-
                 for (int i = 0; i<customerListSize; i++) {
 
                     dbUser = custArrayList.get(i).getId();
@@ -105,6 +110,26 @@ public class logReg extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void showHidePass () {
+        //Show Hide Password
+        ImageView showHidePwd = findViewById(R.id.imageView_shows_hide_pwd);
+        showHidePwd.setImageResource(R.drawable.ic_hide_pwd);
+        showHidePwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (passwordEdt.getTransformationMethod().equals(HideReturnsTransformationMethod.getInstance())){
+                    //if password is visible hide
+                    passwordEdt.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    //change icon
+                    showHidePwd.setImageResource(R.drawable.ic_hide_pwd);
+                } else {
+                    passwordEdt.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    showHidePwd.setImageResource(R.drawable.ic_show_pwd);
+                }
+            }
+        });
     }
 
 

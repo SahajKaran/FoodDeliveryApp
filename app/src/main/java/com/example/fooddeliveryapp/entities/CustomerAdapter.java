@@ -60,7 +60,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
             name = itemView.findViewById(R.id.customerName);
             email = itemView.findViewById(R.id.customerEmail);
             age = itemView.findViewById(R.id.Age);
-            password = itemView.findViewById(R.id.password);
+            password = itemView.findViewById(R.id.customerPassword);
         }
     }
 }
