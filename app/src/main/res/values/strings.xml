@@ -22,4 +22,5 @@
     <string name="sign_up">Sign Up</string>
     <string name="sign_in_to_continue">Sign in to continue</string>
     <string name="create_account">Create Account</string>
+    <string name="what_would_you_like_to_n_order_today">What would you like to \nOrder Today ?</string>
 </resources>

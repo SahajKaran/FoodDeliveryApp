@@ -68,28 +68,32 @@ public class logReg extends AppCompatActivity {
                 String dbUser;
                 String dbUserPass;
 
-                if (userEmail.isEmpty() || passWord.isEmpty()) {
-                    Toast.makeText(logReg.this, "Please fill email and password fields.", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                //Remove this part.
+                Intent intent1 = new Intent(logReg.this, MainActivity.class);
+                startActivity(intent1);
 
-                //Search Database for customer
-                //ToDO: Optimize for loop Binary search maybe ?
-                for (int i = 0; i<customerListSize; i++) {
-
-                    dbUser = custArrayList.get(i).getId();
-                    dbUserPass = custArrayList.get(i).getPassword();
-                    if (userEmail.equals(dbUser) && passWord.equals(dbUserPass)) {
-                        validUser = true; //customer was found on the database.
-                    }
-                }
-
-                if (validUser) { // Customer is valid user let them through to main page.
-                    Intent intent = new Intent(logReg.this, MainActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(logReg.this, "Ivalid User. Please Register.", Toast.LENGTH_SHORT).show();
-                }
+//                if (userEmail.isEmpty() || passWord.isEmpty()) {
+//                    Toast.makeText(logReg.this, "Please fill email and password fields.", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//
+//                //Search Database for customer
+//                //ToDO: Optimize for loop Binary search maybe ?
+//                for (int i = 0; i<customerListSize; i++) {
+//
+//                    dbUser = custArrayList.get(i).getId();
+//                    dbUserPass = custArrayList.get(i).getPassword();
+//                    if (userEmail.equals(dbUser) && passWord.equals(dbUserPass)) {
+//                        validUser = true; //customer was found on the database.
+//                    }
+//                }
+//
+//                if (validUser) { // Customer is valid user let them through to main page.
+//                    Intent intent = new Intent(logReg.this, MainActivity.class);
+//                    startActivity(intent);
+//                } else {
+//                    Toast.makeText(logReg.this, "Ivalid User. Please Register.", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 
