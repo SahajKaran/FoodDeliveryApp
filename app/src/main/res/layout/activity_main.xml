@@ -64,10 +64,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/box"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_height="785dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/layout_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search">
@@ -90,13 +89,37 @@
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="231dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/otherFoodTitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/popularTitle" />
+
+
+        <TextView
+            android:id="@+id/otherFoodTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/semibold"
+            android:text="Other That You Might Like"
+            android:textColor="@color/colorText"
+            android:textSize="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/food_items" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/food_items2"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otherFoodTitle" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
